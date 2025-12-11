@@ -1,5 +1,5 @@
 {
   "name": "chumcast",
   "compatibility_date": "2025-12-11",
-  "main": "src/main.ts"
+  "main": "src/main.tsx"
 }
