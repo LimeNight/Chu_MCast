@@ -1,7 +1,18 @@
+import VideoGrid from "../components/VideoGrid"
+
 const Videos = () => {
   return (
-    <div id="videos" className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Összes videó</h1>
+    <div id="videos" className="mt-24 max-w-6xl mx-auto">
+
+      {/* Header */}
+      <div className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Videos
+        </h2>
+      </div>
+
+      <VideoGrid />
+
     </div>
   )
 }

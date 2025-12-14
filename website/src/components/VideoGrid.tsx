@@ -25,13 +25,8 @@ export default function VideoGrid() {
   }, [page])
 
   return (
-    <section id="videos" className="py-24 px-6 bg-black">
+    <section id="videos" className="py-12 px-2 bg-black">
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Videos</h2>
-        </div>
 
         {/* Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

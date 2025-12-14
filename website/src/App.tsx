@@ -3,7 +3,7 @@ import Live from "./sections/Live"
 import Footer from "./components/Footer"
 import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
-import VideoGrid from "./components/VideoGrid"
+import Videos from "./sections/Videos"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
 
       <main>
         <Hero />
-        <VideoGrid />
+        <Videos />
         <Live />
         <Contact />
       </main>

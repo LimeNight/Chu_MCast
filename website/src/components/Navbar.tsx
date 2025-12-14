@@ -32,10 +32,6 @@ const Navbar = () => {
 
         {/* Scroll indicator */}
         <div className="flex items-center gap-3 mt-3">
-          {/* Section name */}
-          <span className="text-xs uppercase tracking-wider text-white/60">
-            {currentSection}
-          </span>
 
           {/* Progress bar */}
           <div className="flex-1 h-1 bg-white/20 rounded overflow-hidden">
@@ -46,6 +42,12 @@ const Navbar = () => {
               transition={{ type: "tween", duration: 0.2 }}
             />
           </div>
+
+          {/* Section name */}
+          <span className="text-xs uppercase tracking-wider text-white/60">
+            {currentSection}
+          </span>
+          
         </div>
 
       </div>
