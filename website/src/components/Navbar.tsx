@@ -1,7 +1,7 @@
 import { useScrollSpy } from "../hooks/useScrollSpy"
 import { motion } from "framer-motion"
 
-const sections = ["home", "pricing", "videos", "live", "contact"]
+const sections = ["home", "pricing", "videos", "contact"]
 
 const Navbar = () => {
   const { currentSection, scrollProgress } = useScrollSpy(sections)
