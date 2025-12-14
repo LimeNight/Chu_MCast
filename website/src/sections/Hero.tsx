@@ -1,5 +1,5 @@
 import heroVideo from "/hero-bg-1.mp4";
-
+import { motion } from "framer-motion"
 
 const Hero = () => {
   return (
@@ -21,13 +21,25 @@ const Hero = () => {
       {/* 🧠 Content */}
       <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
         <div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          {/* Hero szöveg */}
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             Chu-MobilCast
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto">
+
+          <motion.p
+            className="text-lg md:text-2xl text-white/70 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
             Live-uitzendingen, video’s en content op een modern, eendelig platform!
-          </p>
+          </motion.p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
 

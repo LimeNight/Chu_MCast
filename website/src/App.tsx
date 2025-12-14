@@ -7,14 +7,16 @@ import VideoGrid from "./components/VideoGrid"
 
 function App() {
   return (
-    <div className="bg-gray-950 text-gray-200">
+    <div className="font-sans bg-black text-white">
       <Navbar />
 
-      <Hero />
-      <VideoGrid />
-      <Live />
-      <Contact />
-
+      <main>
+        <Hero />
+        <VideoGrid />
+        <Live />
+        <Contact />
+      </main>
+      
       <Footer />
     </div>
   )
