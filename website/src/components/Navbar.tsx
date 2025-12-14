@@ -1,5 +1,6 @@
 import { useScrollSpy } from "../hooks/useScrollSpy"
 import { motion } from "framer-motion"
+import logo from "../../public/logo.png"
 
 const sections = ["home", "pricing", "videos", "contact"]
 
@@ -12,7 +13,9 @@ const Navbar = () => {
 
         {/* Logo + Menu */}
         <div className="flex justify-between items-center">
-          <a href="#" className="font-bold text-lg">MobiCast</a>
+          <a href="#" className="font-bold text-lg">
+            <img src={logo} alt="MCast Logo" className="h-16" />
+          </a>
           <div className="flex space-x-4 text-sm">
             {sections.map(sec => (
               <a

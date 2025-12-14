@@ -1,5 +1,6 @@
 import heroVideo from "/hero-bg-1.mp4";
 import { motion } from "framer-motion"
+import logo from "../../public/logo.png"
 
 const Hero = () => {
   return (
@@ -28,17 +29,17 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            MobiCast
+            <img src={logo} alt="MCast Logo" className="h-28 inline-block" />
           </motion.h1>
 
 
           <motion.p
-            className="text-lg md:text-2xl text-white/70 mb-10"
+            className="text-lg md:text-2xl text-white/70 mb-10 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            Live-uitzendingen, video’s en content op een modern, eendelig platform!
+            MobiCast is een mobiele podcaststudio voor professionele audio- en video-opnames op locatie, voor creators, bedrijven en instituten.
           </motion.p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
