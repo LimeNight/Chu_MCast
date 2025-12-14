@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar"
-import Live from "./sections/Live"
 import Footer from "./components/Footer"
 import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
@@ -15,7 +14,6 @@ function App() {
         <Hero />
         <Pricing />
         <Videos />
-        <Live />
         <Contact />
       </main>
       

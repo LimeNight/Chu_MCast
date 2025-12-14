@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-screen w-full overflow-hidden">
 
       {/* 🎥 Background video */}
       <video
@@ -28,7 +28,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Chu-MobilCast
+            MobiCast
           </motion.h1>
 
 
@@ -62,28 +62,6 @@ const Hero = () => {
                         "
             >
               Videos
-            </a>
-
-            {/* Secondary button */}
-            <a
-              href="#live"
-              className="
-                          inline-flex items-center justify-center
-                          px-8 py-3
-                          rounded-xl
-                          font-medium
-                          text-white
-                          bg-white/10
-                          backdrop-blur-md
-                          border border-white/20
-                          transition-all duration-300 ease-out
-                          hover:bg-white/20
-                          hover:scale-105 hover:-translate-y-0.5
-                          active:scale-95
-                          focus:outline-none focus:ring-2 focus:ring-white/30
-                        "
-            >
-              Stream
             </a>
 
           </div>
