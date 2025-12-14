@@ -30,18 +30,15 @@ export default function VideoGrid() {
 
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Videók</h2>
-          <p className="opacity-70">
-            Oldal {page + 1} / {totalPages}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Videos</h2>
         </div>
 
         {/* Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {loading
             ? Array(ITEMS_PER_PAGE)
-                .fill(0)
-                .map((_, idx) => <VideoSkeleton key={idx} />)
+              .fill(0)
+              .map((_, idx) => <VideoSkeleton key={idx} />)
             : visibleVideos.map(video => <VideoCard key={video.id} video={video} />)}
         </div>
 
@@ -50,21 +47,26 @@ export default function VideoGrid() {
           <button
             disabled={!canPrev}
             onClick={() => setPage(p => p - 1)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${
-              canPrev ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
-            }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${canPrev ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
+              }`}
           >
             ←
           </button>
           <button
             disabled={!canNext}
-            onClick={() => setPage(p => p + 1)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${
-              canNext ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
-            }`}
+            onClick={() => {setPage(p => p + 1)}}
+            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${canNext ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
+              }`}
           >
             →
           </button>
+        </div>
+        
+        {/* Pagination-numbers */}
+        <div className="text-center">
+          <p className="opacity-70">
+            Pagina {page + 1} / {totalPages}
+          </p>
         </div>
       </div>
     </section>

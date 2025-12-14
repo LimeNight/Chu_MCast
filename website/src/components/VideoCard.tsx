@@ -4,6 +4,7 @@ type Props = {
   video: Video
 }
 
+const videoAllowances: string = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
 const VideoCard = ({ video }: Props) => {
   return (
@@ -24,7 +25,7 @@ const VideoCard = ({ video }: Props) => {
           src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
           title={video.title}
           loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow={videoAllowances}
           allowFullScreen
         />
       </div>

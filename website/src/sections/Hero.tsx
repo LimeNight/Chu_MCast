@@ -1,8 +1,9 @@
 import heroVideo from "/hero-bg-1.mp4";
 
+
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section id="hero" className="relative h-screen w-full overflow-hidden">
 
       {/* 🎥 Background video */}
       <video
@@ -21,11 +22,11 @@ const Hero = () => {
       <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
         <div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Chu-MobiCast
+            Chu-MobilCast
           </h1>
 
           <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto">
-            Élő közvetítések, videók és tartalmak egy modern, egyoldalas felületen
+            Live-uitzendingen, video’s en content op een modern, eendelig platform!
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
@@ -48,7 +49,7 @@ const Hero = () => {
                           focus:outline-none focus:ring-2 focus:ring-blue-400/60
                         "
             >
-              Videók
+              Videos
             </a>
 
             {/* Secondary button */}
@@ -70,7 +71,7 @@ const Hero = () => {
                           focus:outline-none focus:ring-2 focus:ring-white/30
                         "
             >
-              Élő közvetítés
+              Stream
             </a>
 
           </div>
