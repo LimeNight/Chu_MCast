@@ -4,6 +4,7 @@ import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
 import Videos from "./sections/Videos"
 import Pricing from "./sections/Pricing"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       </main>
       
       <Footer />
+
+      <WhatsAppButton />
     </div>
   )
 }
