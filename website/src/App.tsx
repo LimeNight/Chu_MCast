@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar"
-import Videos from "./sections/Videos"
 import Live from "./sections/Live"
 import Footer from "./components/Footer"
 import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
+import VideoGrid from "./components/VideoGrid"
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Navbar />
 
       <Hero />
-      <Videos />
+      <VideoGrid />
       <Live />
       <Contact />
 
