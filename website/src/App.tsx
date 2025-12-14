@@ -1,22 +1,23 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import VideoGrid from "./components/VideoGrid";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar"
+import Videos from "./sections/Videos"
+import Live from "./sections/Live"
+import Footer from "./components/Footer"
+import Contact from "./sections/Contact"
+import Hero from "./sections/Hero"
 
 function App() {
   return (
-    <div className="dark bg-gray-950 text-gray-200">
-      <Header />
-      <Hero />
+    <div className="bg-gray-950 text-gray-200">
+      <Navbar />
 
-      <section id="videos" className="max-w-6xl mx-auto p-4 pt-20">
-        <h2 className="text-3xl font-bold mb-6">Videók</h2>
-        <VideoGrid />
-      </section>
+      <Hero />
+      <Videos />
+      <Live />
+      <Contact />
 
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
