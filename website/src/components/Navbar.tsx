@@ -1,7 +1,7 @@
 import { useScrollSpy } from "../hooks/useScrollSpy"
 import { motion } from "framer-motion"
 
-const sections = ["hero", "videos", "live", "contact"]
+const sections = ["hero", "pricing", "videos", "live", "contact"]
 
 const Navbar = () => {
   const { currentSection, scrollProgress } = useScrollSpy(sections)
@@ -12,7 +12,7 @@ const Navbar = () => {
 
         {/* Logo + Menu */}
         <div className="flex justify-between items-center">
-          <a href="#hero" className="font-bold text-lg">Chu-MobiCast</a>
+          <a href="#hero" className="font-bold text-lg">Chu-MobilCast</a>
           <div className="flex space-x-4 text-sm">
             {sections.slice(1).map(sec => (
               <a

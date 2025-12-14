@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
 import Videos from "./sections/Videos"
+import Pricing from "./sections/Pricing"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
 
       <main>
         <Hero />
+        <Pricing />
         <Videos />
         <Live />
         <Contact />
