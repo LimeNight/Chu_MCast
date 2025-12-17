@@ -7,18 +7,18 @@ export default function VideoGrid() {
   const [nextPage, setNextPage] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   loadVideos()
-  // }, [])
+  useEffect(() => {
+    loadVideos()
+  }, [])
 
-  // async function loadVideos(token?: string) {
-  //   setLoading(true)
-  //   const data = await fetchVideos(token)
-  //   console.log(data)
-  //   setVideos(prev => [...prev, ...data.items])
-  //   setNextPage(data.nextPageToken || null)
-  //   setLoading(false)
-  // }
+  async function loadVideos(token?: string) {
+    setLoading(true)
+    const data = await fetchVideos(token)
+    console.log(data)
+    setVideos(prev => [...prev, ...data.items])
+    setNextPage(data.nextPageToken || null)
+    setLoading(false)
+  }
 
   return (
     <section id="videos" className="py-28 px-6 bg-[#050814]">
