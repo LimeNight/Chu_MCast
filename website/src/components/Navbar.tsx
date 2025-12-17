@@ -1,5 +1,4 @@
 import { useScrollSpy } from "../hooks/useScrollSpy"
-import { motion } from "framer-motion"
 import logo from "../../public/logo.png"
 import ScrollIndicator from "./ScrollIndicator"
 

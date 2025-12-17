@@ -1,6 +1,5 @@
 import heroVideo from "/hero-bg-1.mp4";
 import { motion } from "framer-motion"
-import logo from "../../public/logo.png"
 
 const Hero = () => {
   return (
