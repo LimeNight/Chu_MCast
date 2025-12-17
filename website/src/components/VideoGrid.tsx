@@ -1,68 +1,83 @@
-import { useState, useEffect } from "react"
-import VideoCard from "./VideoCard"
-import VideoSkeleton from "./VideoSkeleton"
-import { videos } from "../data/videos"
-
-const ITEMS_PER_PAGE = 6
+import { useEffect, useState } from "react"
+import { fetchVideos } from "../lib/youtube"
+import type { YouTubeVideo } from "../lib/youtube"
 
 export default function VideoGrid() {
-  const [page, setPage] = useState(0)
+  const [videos, setVideos] = useState<YouTubeVideo[]>([])
+  const [nextPage, setNextPage] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
-  const totalPages = Math.ceil(videos.length / ITEMS_PER_PAGE)
-  const start = page * ITEMS_PER_PAGE
-  const end = start + ITEMS_PER_PAGE
-  const visibleVideos = videos.slice(start, end)
-
-  const canPrev = page > 0
-  const canNext = page < totalPages - 1
-
-  // Szimulált loading (pl. fetch API esetén itt jönne)
   useEffect(() => {
+    loadVideos()
+  }, [])
+
+  async function loadVideos(token?: string) {
     setLoading(true)
-    const timer = setTimeout(() => setLoading(false), 800) // 0.8s delay
-    return () => clearTimeout(timer)
-  }, [page])
+    const data = await fetchVideos(token)
+    console.log(data)
+    setVideos(prev => [...prev, ...data.items])
+    setNextPage(data.nextPageToken || null)
+    setLoading(false)
+  }
 
   return (
-    <section id="videos" className="py-12 px-2 bg-black">
+    <section id="videos" className="py-28 px-6 bg-[#050814]">
       <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-white mb-10">
+          Recente video’s
+        </h2>
 
-        {/* Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {loading
-            ? Array(ITEMS_PER_PAGE)
-              .fill(0)
-              .map((_, idx) => <VideoSkeleton key={idx} />)
-            : visibleVideos.map(video => <VideoCard key={video.id} video={video} />)}
+        {/* GRID */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {videos.map(video => (
+            <div
+              key={video.id.videoId}
+              className="
+                bg-[#0f1117]
+                border border-cyan-400/30
+                rounded-xl overflow-hidden
+                hover:border-cyan-400 transition
+              "
+            >
+              <iframe
+                className="w-full aspect-video"
+                src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                allowFullScreen
+              />
+
+              <div className="p-4 text-white/80">
+                <h3 className="font-semibold text-sm line-clamp-2">
+                  {video.snippet.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+
+          {/* SKELETON */}
+          {loading &&
+            Array.from({ length: 3 }).map((_, i) => (
+              <div
+                key={i}
+                className="animate-pulse rounded-xl bg-[#0f1117] h-[220px]"
+              />
+            ))}
         </div>
 
-        {/* Pagination */}
-        <div className="mt-12 flex justify-center items-center gap-6">
-          <button
-            disabled={!canPrev}
-            onClick={() => setPage(p => p - 1)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${canPrev ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
-              }`}
-          >
-            ←
-          </button>
-          <button
-            disabled={!canNext}
-            onClick={() => {setPage(p => p + 1)}}
-            className={`w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all duration-300 ${canNext ? "hover:bg-white/10 hover:scale-110" : "opacity-30 cursor-not-allowed"
-              }`}
-          >
-            →
-          </button>
-        </div>
-        
-        {/* Pagination-numbers */}
-        <div className="text-center">
-          <p className="opacity-70">
-            Pagina {page + 1} / {totalPages}
-          </p>
-        </div>
+        {/* LOAD MORE */}
+        {nextPage && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => loadVideos(nextPage)}
+              className="
+                px-8 py-3 rounded-full
+                bg-cyan-400 text-black font-semibold
+                hover:bg-cyan-300 transition
+              "
+            >
+              Meer laden
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

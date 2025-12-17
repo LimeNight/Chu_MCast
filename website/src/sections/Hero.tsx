@@ -29,7 +29,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src={logo} alt="MCast Logo" className="h-28 inline-block" />
+            <p>Hoe wij werken – MobiCast</p>
           </motion.h1>
 
 
@@ -39,13 +39,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            MobiCast is een mobiele podcaststudio voor professionele audio- en video-opnames op locatie, voor creators, bedrijven en instituten.
-          </motion.p>
+            MobiCast begeleidt het volledige traject van idee tot publiceerklare (video)podcast — op locatie.
+            Of je nu zelf wilt editen of alles uit handen wilt geven: wij sluiten aan op wat jij nodig hebt.
+            </motion.p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
 
             {/* Primary button */}
-            <a
+            {/* <a
               href="#videos"
               className="
                           relative inline-flex items-center justify-center
@@ -63,7 +64,7 @@ const Hero = () => {
                         "
             >
               Videos
-            </a>
+            </a> */}
 
           </div>
 

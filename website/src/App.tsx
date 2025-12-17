@@ -5,6 +5,7 @@ import Hero from "./sections/Hero"
 import Videos from "./sections/Videos"
 import Pricing from "./sections/Pricing"
 import WhatsAppButton from "./components/WattsAppButton"
+import ProcessTimeline from "./components/ProcessTImeline"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <main>
         <Hero />
+        <ProcessTimeline />
         <Pricing />
         <Videos />
         <Contact />

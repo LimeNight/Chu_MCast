@@ -10,7 +10,6 @@ const Videos = () => {
           Videos
         </h2>
       </div>
-
       <VideoGrid />
 
     </div>
