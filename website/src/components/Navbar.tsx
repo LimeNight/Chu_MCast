@@ -1,11 +1,11 @@
 import { useScrollSpy } from "../hooks/useScrollSpy"
-import logo from "../../public/logo.png"
 import ScrollIndicator from "./ScrollIndicator"
+import logo from "../../public/logo.png"
 
 const sections = ["home","intro", "pricing", "videos", "contact"]
 
 const Navbar = () => {
-  const { currentSection, scrollProgress } = useScrollSpy(sections)
+  const { currentSection,  } = useScrollSpy(sections)
 
   return (
     <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur z-50">
